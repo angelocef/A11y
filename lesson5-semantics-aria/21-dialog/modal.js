@@ -45,14 +45,18 @@ function openModal(e) {
       if (e.shiftKey) {
         if (document.activeElement === firstTabStop) {
           e.preventDefault();
+		  document.activeElement.setAttribute(aria-flowto, 'close');
           lastTabStop.focus();
+		  
         }
 
       // TAB
       } else {
         if (document.activeElement === lastTabStop) {
           e.preventDefault();
+		  document.activeElement.setAttribute(aria-flowto, 'login');
           firstTabStop.focus();
+		  
         }
       }
     }
